@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 
     if (window.isClosed())
     {
-        cerr << "Erreur lors de la création de la fenêtre." << endl;
+        cerr << "Erreur lors de la crÃ©ation de la fenÃªtre." << endl;
         TTF_Quit();
         SDL_Quit();
         return 1;
@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
             }
             else
             {
-                ConWD::showPopup("Victoire", "Vous avez Gagné !");
+                ConWD::showPopup("Victoire", "Vous avez GagnÃ© !");
             }
 
             bool isPlaying = ConWD::askForReplay("Rejouer ?", "Voulez-vous rejouer ?");
@@ -129,13 +129,15 @@ int main(int argc, char* argv[])
 //{
 //    Test myTest;
 //
-//    struct TestResult {
+//    struct TestResult 
+//    {
 //        string name;
 //        bool result;
 //    };
 //
 //    // Je fais un tableau pour mes test
-//    TestResult testResults[] = {
+//    TestResult testResults[] = 
+//   {
 //        { "Test1", myTest.Test1() },
 //        { "Test2", myTest.Test2() },
 //        { "Test3", myTest.Test3() },
@@ -155,15 +157,18 @@ int main(int argc, char* argv[])
 //
 //    };
 //
-//    for (const TestResult& test : testResults) {
+//    for (const TestResult& test : testResults) 
+//    {
 //        cout << "Test '" << test.name << "': ";
-//        if (test.result) {
+//        if (test.result) 
+//        {
 //            cout << "Succes" << endl;
 //        }
-//        else {
+//        else 
+//        {
 //            cout << "Echec" << endl;
 //        }
 //    }
 //
 //    return 0;
-}
+//}
