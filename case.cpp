@@ -15,10 +15,10 @@ Case::Case()
 {
     Number = 0;
     upgrade = false;
-    // Initialisez la couleur et la position par défaut
     setupCase(0, 0, { 0, 0, 0, 255 });  // Noir
 }
 
+//fonction pour initialiser les paramÃ¨tres de la case
 void Case::setupCase(int x, int y, SDL_Color color)
 {
     setPosition(x, y);
@@ -47,7 +47,7 @@ void renderText(SDL_Renderer* renderer, int x, int y, const string& text, const 
 
 void Case::displayCase(SDL_Renderer* renderer, TTF_Font* font, SDL_Rect caseRect)
 {
-    // Affichez la case avec la couleur et la position actuelles
+    //affichez la case avec la couleur et la position actuelles
     SDL_SetRenderDrawColor(renderer, m_color.r, m_color.g, m_color.b, m_color.a);
     SDL_RenderFillRect(renderer, &caseRect);
 
@@ -56,9 +56,9 @@ void Case::displayCase(SDL_Renderer* renderer, TTF_Font* font, SDL_Rect caseRect
         string gridNumStr = to_string(Number);
         SDL_Color textColor = { 0, 0, 0, 255 };  // Noir
 
-        // Position du texte centré dans la case
-        int textX = caseRect.x + (caseRect.w - 20) / 2; // Ajustez la taille de la police ici (20)
-        int textY = caseRect.y + (caseRect.h - 100) / 2; // Ajustez la hauteur du texte ici (100)
+        //centrÃ© dans la case
+        int textX = caseRect.x + (caseRect.w - 20) / 2;
+        int textY = caseRect.y + (caseRect.h - 100) / 2;
 
         renderText(renderer, textX, textY, gridNumStr, textColor, font);
     }
