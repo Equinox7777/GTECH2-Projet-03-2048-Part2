@@ -14,7 +14,6 @@ using namespace std;
 Grid::Grid()
 {
     srand(time(0));
-    // Initialisation de GameObject
     gameObjects = new GameObject * [SIZE * SIZE];
     for (int i = 0; i < SIZE * SIZE; i++)
     {
@@ -34,7 +33,6 @@ Grid::Grid(int initialGrid[4][4])
         }
     }
 
-    // Initialisation de GameObject
     gameObjects = new GameObject * [SIZE * SIZE];
     for (int i = 0; i < SIZE * SIZE; i++)
     {
@@ -76,7 +74,6 @@ void Grid::addRandomNumber()
 
 void Grid::displayGrid(SDL_Renderer* renderer, TTF_Font* font, int windowSize)
 {
-    // Effacez l'écran
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
@@ -92,13 +89,11 @@ void Grid::displayGrid(SDL_Renderer* renderer, TTF_Font* font, int windowSize)
             int caseY = i * (caseSize + padding) + padding;
 
             SDL_Rect caseRect = { caseX, caseY, caseSize, caseSize };
-            // Affichez chaque case individuellement
-            grid[i][j].setupCase(caseX, caseY, { 255, 255, 255, 255 }); // Couleur blanche par défaut
+            grid[i][j].setupCase(caseX, caseY, { 255, 255, 255, 255 }); //blanc
             grid[i][j].displayCase(renderer, font , caseRect);
         }
     }
 
-    // Affichez le rendu
     SDL_RenderPresent(renderer);
 }
 
@@ -304,14 +299,18 @@ void Grid::restartUp()
 int Grid::conWD()
 {
     int retourne = 4;
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
+    for (int i = 0; i < SIZE; i++) 
+    {
+        for (int j = 0; j < SIZE; j++) 
+        {
 
-            if (grid[i][j].Number == 2048) {
+            if (grid[i][j].Number == 2048) 
+            {
                 return 2;
             }
 
-            if (grid[i][j].Number == 0) {
+            if (grid[i][j].Number == 0) 
+            {
                 retourne = 0;
             }
 
@@ -329,10 +328,14 @@ int Grid::conWD()
     return retourne;
 }
 
-bool Grid::Compare(int otherGrid[4][4]) {
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
-            if (grid[i][j].Number != otherGrid[i][j]) {
+bool Grid::Compare(int otherGrid[4][4]) 
+{
+    for (int i = 0; i < SIZE; i++) 
+    {
+        for (int j = 0; j < SIZE; j++) 
+        {
+            if (grid[i][j].Number != otherGrid[i][j]) 
+            {
                 return false;
             }
         }
