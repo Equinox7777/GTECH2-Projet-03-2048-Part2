@@ -1,4 +1,5 @@
 #include "input.h"
+
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
@@ -10,17 +11,21 @@
 #define KEY_RIGHT 77
 using namespace std;
 
-string Input::getUserInput() {
+string Input::getUserInput() 
+{
     int c = 0;
     bool validInput = false;
 
-    while (!validInput) {
+    while (!validInput) 
+    {
         std::wcout << L"Utilisez les touches directionnelles pour deplacer." << endl;
         c = _getwch();
 
-        if (c == 224) {
+        if (c == 224) 
+        {
             c = _getwch();
-            switch (c) {
+            switch (c) 
+            {
             case KEY_UP:
                 return "z"; // 'z' pour haut
             case KEY_DOWN:
@@ -34,9 +39,10 @@ string Input::getUserInput() {
                 break;
             }
         }
-        else {
+        else 
+        {
             std::wcout << L"Commande non reconnue. Utilisez les touches directionnelles uniquement." << std::endl;
         }
     }
-    return "rien"; // Retour par défaut au cas où quelque chose ne se passe pas comme prévu
+    return "rien";
 }
