@@ -1,11 +1,11 @@
+#include "test.h"
+#include "grid.h"
+
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
 #include <string>
-#include "test.h"
-
-#include "grid.h"
 
 using namespace std;
 
